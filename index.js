@@ -4,20 +4,39 @@ const respuestas = {
 };
 // crear variable puntaje con "let" ya que se irá modificando.
 let puntaje = 0;
+let participante = '';
 
 // window.onload: funcion del navegador que se ejecuta cuando se termina de cargar el html
 window.onload = function() {
+  // contenedor formulario de nombre
+  const contenedorNombre = document.getElementById("contenedor-nombre");
+  // contenedor de participante
+  const contenedorParticipante = document.getElementById("contenedor-participante");
+
   // contenedores de preguntas
   const contenedorPregunta1 = document.getElementById("contenedor-pregunta1");
   const contenedorPregunta2 = document.getElementById("contenedor-pregunta2");
 
+  // ocultar preguntas contenedores
+  contenedorPregunta1.style.display = 'none';
+  contenedorPregunta2.style.display = 'none';
+
+  // boton empezar
+  const botonComenza = document.getElementById("comenzar");
+  botonComenza.onclick = () => {
+    const nombre = document.getElementById("nombre-participante").value;
+    if (typeof nombre === "string" && nombre !== "") {
+      contenedorNombre.style.display = 'none';
+      contenedorPregunta1.style.display = 'block';
+      participante = nombre;
+      contenedorParticipante.innerText = "Buena suerte " + participante;
+    }
+  }
+
   // obtener elemento para mostrar puntaje
   const elementoPuntaje = document.getElementById("puntaje");
 
-  // ocultar solo contenedor de pregunta 2
-  contenedorPregunta2.style.display = 'none';
-
-  // Pregunta 1
+  // alternativas Pregunta 1
   const pregunta1opcion1 = document.getElementById('pregunta1opcion1');
   const pregunta1opcion2 = document.getElementById('pregunta1opcion2');
   const pregunta1opcion3 = document.getElementById('pregunta1opcion3');
