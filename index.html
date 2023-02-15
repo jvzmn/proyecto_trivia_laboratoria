@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Trivia Laboratoria</title>
   <link rel="stylesheet" href="./styles.css">
   <script type="text/javascript" src="./index.js"></script>
 </head>
@@ -16,7 +16,7 @@
   </header>
   <main>
     <section class="contenedor-trivia">
-      <div class="pregunta1">
+      <div id="contenedor-pregunta1">
         <h2>
           ¿Cual es la capital de Chile?
         </h2>
@@ -38,7 +38,7 @@
             </li>
           </ul>
       </div>
-      <div class="pregunta2">
+      <div id="contenedor-pregunta2">
         <h2>
           ¿Cual es la capital de Peru?
         </h2>
@@ -54,12 +54,17 @@
               <span class="selector"></span>
             </li>
             <li>
-              <input type="radio" id="pregunta2opcion3"  name="pregunta2" value="Tacna">
+              <input type="radio" id="pregunta2opcion3" name="pregunta2" value="Tacna">
               <label for="pregunta2opcion3">Tacna</label>
               <span class="selector"></span>
             </li>
           </ul>
       </div>
+    </section>
+    <section class="contenedor-puntaje">
+      <p id="puntaje">
+        Tu puntaje es 0
+      </p>
     </section>
   </main>
 </body>
