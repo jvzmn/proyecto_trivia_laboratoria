@@ -1,6 +1,6 @@
 const respuestas = {
-  pregunta1: "Santiago",
-  pregunta2: 'Lima'
+  pregunta1: "Guepardo",
+  pregunta2: 'Del cerdo'
 };
 // crear variable puntaje con "let" ya que se irá modificando.
 let puntaje = 0;
@@ -50,33 +50,30 @@ window.onload = function() {
     const valor = event.currentTarget.value;
     // obtengo el nombre de la pregunta
     const pregunta = event.currentTarget.name;
-    // valido si el valor de pregunta es igual a pregunta1 
-    if (pregunta === "pregunta1") {
-      // validar si el valor es la respuesta correcta
-      if (valor === respuestas[pregunta]) {
-        // alternativa correcta cambio color de elemento li a verde
-        event.currentTarget.parentElement.style.background = "green";
-        // sumar 100 puntos
-        puntaje += 100;
-      } else {
-        // alternativa correcta cambio color de elemento li a rojo
-        event.currentTarget.parentElement.style.background = "red";
-      }
-
-      // Actualizar puntaje en elemento html
-      elementoPuntaje.innerText = "Tu puntaje es " + puntaje;
-
-      // bloquear temporalmente opciones para que no sean clickeables
-      pregunta1opcion1.disabled = true;
-      pregunta1opcion2.disabled = true;
-      pregunta1opcion3.disabled = true;
-
-      // ocultar contenedor de pregunta 1 y mostrar pregunta 2 despues de 3 segundos
-      setTimeout(() => {
-        contenedorPregunta1.style.display = 'none';
-        contenedorPregunta2.style.display = 'block';
-      }, 3000);
+    // validar si el valor es la respuesta correcta
+    if (valor === respuestas[pregunta]) {
+      // alternativa correcta cambio color de elemento li a verde
+      event.currentTarget.parentElement.style.background = "green";
+      // sumar 100 puntos
+      puntaje += 100;
+    } else {
+      // alternativa correcta cambio color de elemento li a rojo
+      event.currentTarget.parentElement.style.background = "red";
     }
+
+    // Actualizar puntaje en elemento html
+    elementoPuntaje.innerText = "Tu puntaje es " + puntaje;
+
+    // bloquear temporalmente opciones para que no sean clickeables
+    pregunta1opcion1.disabled = true;
+    pregunta1opcion2.disabled = true;
+    pregunta1opcion3.disabled = true;
+
+    // ocultar contenedor de pregunta 1 y mostrar pregunta 2 despues de 3 segundos
+    setTimeout(() => {
+      contenedorPregunta1.style.display = 'none';
+      contenedorPregunta2.style.display = 'block';
+    }, 3000);
   };
 
   // Pregunta 2
@@ -91,27 +88,25 @@ window.onload = function() {
     const valor = event.currentTarget.value;
     const pregunta = event.currentTarget.name;
 
-    if (pregunta === "pregunta2") {
-      if (valor === respuestas[pregunta]) {
-        // alternativa correcta
-        event.currentTarget.parentElement.style.background = "green";
-        puntaje += 100;
-      } else {
-        event.currentTarget.parentElement.style.background = "red";
-      }
-
-      // Actualizar puntaje
-      elementoPuntaje.innerText = "Tu puntaje es " + puntaje;
-      // bloquear temporalmente opciones para que no sean clickeables
-      pregunta2opcion1.disabled = true;
-      pregunta2opcion2.disabled = true;
-      pregunta2opcion3.disabled = true;
-
-       // ocultar contenedor de pregunta 2 despues de 3 segundos
-       setTimeout(() => {
-        contenedorPregunta2.style.display = 'none';
-      }, 3000);
+    if (valor === respuestas[pregunta]) {
+      // alternativa correcta
+      event.currentTarget.parentElement.style.background = "green";
+      puntaje += 100;
+    } else {
+      event.currentTarget.parentElement.style.background = "red";
     }
+
+    // Actualizar puntaje
+    elementoPuntaje.innerText = "Tu puntaje es " + puntaje;
+    // bloquear temporalmente opciones para que no sean clickeables
+    pregunta2opcion1.disabled = true;
+    pregunta2opcion2.disabled = true;
+    pregunta2opcion3.disabled = true;
+
+      // ocultar contenedor de pregunta 2 despues de 3 segundos
+      setTimeout(() => {
+      contenedorPregunta2.style.display = 'none';
+    }, 3000);
   };
 
   // asignar eventos de click a inputs
