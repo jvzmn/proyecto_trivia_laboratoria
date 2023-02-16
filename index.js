@@ -57,7 +57,7 @@ window.onload = function() {
       // sumar 100 puntos
       puntaje += 100;
     } else {
-      // alternativa correcta cambio color de elemento li a rojo
+      // alternativa incorrecta cambio color de elemento li a rojo
       event.currentTarget.parentElement.style.background = "red";
     }
 
